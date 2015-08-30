@@ -13,6 +13,10 @@
   .set('serialize', function(input, indent){
     return JSON.stringify(input, null, indent);
   });
+
+  // Library essentials
+  reader.set('parser', parser);
+  writer.set('parser', parser);
 })(
   require('fs'),
   require('path'),
