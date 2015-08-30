@@ -1,0 +1,24 @@
+{
+  "name": "refig",
+  "version": "0.0.0",
+  "description": "A library to manage configurations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "refig test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iora/refig.git"
+  },
+  "keywords": [
+    "config",
+    "configuration",
+    "json"
+  ],
+  "author": "Jamen Marz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iora/refig/issues"
+  },
+  "homepage": "https://github.com/iora/refig#readme"
+}
