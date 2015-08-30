@@ -1,4 +1,4 @@
-(function(fs, path, lib){
+(function(lib){
   'use strict';
 
   // Destructure
@@ -15,7 +15,7 @@
   });
 
   // Library essentials
-  reader.set('parser', parser);
+  //reader.set('parser', parser);
   writer.set('parser', parser);
 
   module.exports = {
@@ -33,7 +33,5 @@
     writer: writer
   };
 })(
-  require('fs'),
-  require('path'),
   require(__dirname + '/lib')
 );
