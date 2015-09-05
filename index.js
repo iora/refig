@@ -2,11 +2,9 @@ var lib = require('./lib');
 
 (function(Parser, Reader, Writer){
   var options = {},
-      reader = new Reader(options),
-      writer = new Writer(options),
-      parser = new Parser(options);
-
-  options.test = 'lel';
+      parser = new Parser(options),
+      reader = new Reader(options, parser),
+      writer = new Writer(options, parser);
 
   var methods = {
     // Add new options
@@ -17,9 +15,7 @@ var lib = require('./lib');
 
     // Override options
     use: function(override){
-      parser.use(override);
-      reader.use(override);
-      writer.use(override);
+      options = override;
       return this;
     },
 
@@ -38,7 +34,11 @@ var lib = require('./lib');
     Writer: Writer
   };
 
-  writer.write();
+  methods
+  .set('parse', JSON.parse)
+  .set('serialize', function(data, indent){
+    return JSON.stringify(data, null, indent);
+  });
 
   module.exports = methods;
 })(
