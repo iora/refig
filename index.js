@@ -38,7 +38,8 @@ var lib = require('./lib');
   .set('parse', JSON.parse)
   .set('serialize', function(data, indent){
     return JSON.stringify(data, null, indent);
-  });
+  })
+  .set('indent', 2);
 
   module.exports = methods;
 })(
