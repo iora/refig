@@ -33,7 +33,9 @@ var lib = require('./lib');
     // Objects for custom expanding
     Parser: Parser,
     Reader: Reader,
-    Writer: Writer
+    Writer: Writer,
+
+    options: options
   };
 
   options.methods = methods;
