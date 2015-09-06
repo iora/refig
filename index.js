@@ -26,13 +26,17 @@ var lib = require('./lib');
     serialize: parser.serialize,
 
     // Automatically initiated objects
+    parser: parser,
     reader: reader,
     writer: writer,
 
     // Objects for custom expanding
+    Parser: Parser,
     Reader: Reader,
     Writer: Writer
   };
+
+  options.methods = methods;
 
   methods
   .set('parse', JSON.parse)
