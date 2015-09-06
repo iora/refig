@@ -26,10 +26,7 @@ refig.reader.read(testfile, function(err, data){
 // Decoupled:
 var Reader = refig.Reader;
 var reader = new Reader({}, {
-  parse: JSON.parse,
-  serialize: function(data, indent){
-    return JSON.stringify(data, null, indent);
-  }
+  parse: JSON.parse
 });
 
 reader.read(testfile, function(err, data){
@@ -56,10 +53,7 @@ console.log('sync2: ', test2);
 
 // Decoupled:
 var syncReader = new Reader({async: false}, {
-  parse: JSON.parse,
-  serialize: function(data, indent){
-    return JSON.stringify(data, null, indent);
-  }
+  parse: JSON.parse
 });
 
 var test3 = syncReader.read(testfile);
