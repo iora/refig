@@ -25,6 +25,8 @@ var lib = require('./lib');
     parse: parser.parse,
     serialize: parser.serialize,
     purge: reader.purge,
+    build: writer.build,
+    writeBuild: writer.writeBuild,
 
     // Automatically initiated objects
     parser: parser,
