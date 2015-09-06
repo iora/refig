@@ -1,6 +1,6 @@
 {
   "name": "refig",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A library to manage configurations.",
   "main": "index.js",
   "repository": {
