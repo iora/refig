@@ -11,8 +11,10 @@ refig
   .set('indent', 4)
   .set('base', '/path/to/folder')
   .set('parse', CSON.parse)
-  .set('serialize', function(data, indent){ return CSON.stringify(data, null, indent); })
   .set('async', false);
+  .set('serialize', function(data, indent){ 
+    return CSON.stringify(data, null, indent); 
+  });
 ```
 
 
