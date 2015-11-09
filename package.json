@@ -3,6 +3,9 @@
   "version": "1.2.2",
   "description": "A library to manage configurations.",
   "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iora/refig.git"
