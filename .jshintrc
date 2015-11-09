@@ -1,7 +1,7 @@
 {
   "node": true,
-  "esnext": true,
   "camelcase": true,
+  "esnext": true,
   "eqeqeq": true,
   "indent": 2,
   "latedef": true,
@@ -10,5 +10,6 @@
   "undef": true,
   "unused": true,
   "eqnull": true,
-  "loopfunc": true
+  "loopfunc": true,
+  "jasmine": true
 }

@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/iora/refig/issues"
   },
-  "homepage": "https://github.com/iora/refig#readme"
+  "homepage": "https://github.com/iora/refig#readme",
+  "devDependencies": {
+    "jest-cli": "^0.7.1"
+  },
+  "jest": {
+    "testDirectoryName": "tests"
+  }
 }
