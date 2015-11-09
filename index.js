@@ -1,58 +1,27 @@
-var lib = require('./lib');
+'use strict';
 
-(function(Parser, Reader, Writer){
-  var options = {},
-      parser = new Parser(options),
-      reader = new Reader(options, parser),
-      writer = new Writer(options, parser);
+const lib = require('./lib'),
+      read = lib.read,
+      write = lib.write;
 
-  var methods = {
-    // Add new options
-    set: function(key, imp){
-      options[key] = imp;
-      return this;
-    },
+let Refig = {
+  set: lib.set,
+  read: read,
+  write: write,
 
-    // Override options
-    use: function(override){
-      options = override;
-      return this;
-    },
+  // Defualt options
+  options: {
+    async: true,
+    indent: 2,
+    parse: JSON.parse,
+  },
 
-    // Quick access methods
-    read: reader.read,
-    write: writer.write,
-    parse: parser.parse,
-    serialize: parser.serialize,
-    purge: reader.purge,
-    build: writer.build,
-    writeBuild: writer.writeBuild,
+  // Cache
+  cache: {},
 
-    // Automatically initiated objects
-    parser: parser,
-    reader: reader,
-    writer: writer,
+  // For Destructuring
+  Reader: Reader,
+  Writier: Writer
+};
 
-    // Objects for custom expanding
-    Parser: Parser,
-    Reader: Reader,
-    Writer: Writer,
-
-    options: options
-  };
-
-  options.methods = methods;
-
-  methods
-  .set('parse', JSON.parse)
-  .set('serialize', function(data, indent){
-    return JSON.stringify(data, null, indent);
-  })
-  .set('indent', 2);
-
-  module.exports = methods;
-})(
-  lib.Parser,
-  lib.Reader,
-  lib.Writer
-);
+module.exports = Refig;
