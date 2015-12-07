@@ -2,7 +2,7 @@
   "name": "refig",
   "version": "2.0.0",
   "description": "A library to manage configurations.",
-  "main": "index.js",
+  "main": "lib",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jamen/refig.git"
