@@ -4,7 +4,7 @@ Refig is a flexible configuration reading, writing, and caching library that wor
 ---
 
 ### The Problem
-Configurations in modern applications can become wide-spread through a system and multiple files.  You can global configs, local configs, and even `package.json` configs.  With a widespread system like this, it can be difficult to manage all the different locations a entry could be listed.
+Configurations in modern applications can become wide-spread through a system, they use multiple locations to tell the application what to do depending on the scenario.  You can have global configs, local configs, and even `package.json` configs.  With a widespread system like this, it can be difficult to manage all the different locations a entry could be listed.
 
 ### The Solution
-Refig provides a simple interface to source files from multiple locations in one line, this makes it easy to concatenate any configurations in a given scenario into one parsed object.
+Refig provides a simple interface to source configurations files from multiple locations in one line, then parse all of the files and concatenate them into one object.  This makes it more flexible for the user and easier for you to program, plus the caching and async interface make for a fast library.
