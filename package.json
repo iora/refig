@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iora/refig.git"
+    "url": "git+https://github.com/jamen/refig.git"
   },
   "keywords": [
     "config",
@@ -15,7 +15,7 @@
   "author": "Jamen Marz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iora/refig/issues"
+    "url": "https://github.com/jamen/refig/issues"
   },
-  "homepage": "https://github.com/iora/refig#readme"
+  "homepage": "https://github.com/jamen/refig#readme"
 }
