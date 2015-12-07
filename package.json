@@ -1,11 +1,8 @@
 {
   "name": "refig",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "A library to manage configurations.",
   "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iora/refig.git"
@@ -20,11 +17,5 @@
   "bugs": {
     "url": "https://github.com/iora/refig/issues"
   },
-  "homepage": "https://github.com/iora/refig#readme",
-  "devDependencies": {
-    "jest-cli": "^0.7.1"
-  },
-  "jest": {
-    "testDirectoryName": "tests"
-  }
+  "homepage": "https://github.com/iora/refig#readme"
 }
