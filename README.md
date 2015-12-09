@@ -13,20 +13,43 @@ Refig provides a simple interface to source configurations files from multiple l
 # API
 Refig has a consistent and simple API.
 
-Note: Every asynchronous function also returns a `Promise`, so you don't have to use callbacks.
+Note: Every asynchronous method also returns a `Promise`, so you don't have to use callbacks.
+
+## Methods
+Every asynchronous method also returns a `Promise`, so you don't have to use callbacks.
+
+### `.set(config)`
+### `.set(name, value)`
+  1. `name`: (`String`) name to store option under.
+  2. `value`: Value to set.
+OR
+  1. `config`: (`Object`) Object of options to store.
+
+Example:
+```javascript
+refig.set('foo', 1)
+// OR
+refig.set({ bar: 2 });
+```
+
+### `.get(name)`
+Returns a option out of the configuration.
+  1. `name`: (`String`) name of option to fetch
 
 ### `.read(location, [callback])`
 Read files or folders for configurations asynchronously.
-
-Synchronous alternative: `refig.readSync(location)`.
-
-#### Arguments
   1. `location`: (`Array`/`String`) Path(s) leading to folders or files to be parsed.
   2. `callback`: (`Function`) A [Callback function](#callback-function)
 
+Returns `Promise`
+
+### `.readSync(location)`
+The synchronous version of `.read`.
+  1. `location`: (`Array`/`String`) Path(s) leading to folders or files to be parsed.
+
+Returns configuration.
+
 ### Callback function
 The callback is triggered once the configurations have been fetched and resolved on a asynchronous function.
-
-#### Arguments
- 1. `err`: (`Object`/`Error`/`null`) The error encountered while processing, if none encountered it will be `null`.
- 2. `result`: (`Object`/`null`) The result of the function, if there was no result (i.e an error happened) it will be `null`.  
+  1. `err`: (`Object`/`null`) The error encountered while processing, if none encountered it will be `null`.
+  2. `result`: (`Object`/`null`) The result of the function, if there was no result (i.e an error happened) it will be `null`.  
