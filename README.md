@@ -58,6 +58,6 @@ Returns configuration.
 ===
 
 ### Callback function
-The callback is triggered once the configurations have been fetched and resolved on a asynchronous function.
+A callback is triggered once that function is done doing it's processes.
   1. `err`: (`Object`/`null`) The error encountered while processing, if none encountered it will be `null`.
   2. `result`: (`Object`/`null`) The result of the function, if there was no result (i.e an error happened) it will be `null`.  
