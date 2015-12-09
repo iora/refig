@@ -13,7 +13,7 @@ Refig provides a simple interface to source configurations files from multiple l
 # API
 Refig has a consistent and simple API.
 
-Note: Every asynchronous function also returns a `Promise`, so you don't have to use the traditional asynchronous callback style.
+Note: Every asynchronous function also returns a `Promise`, so you don't have to use callbacks.
 
 ### `refig.read(location, [callback])`
 Read files or folders for configurations asynchronously.
