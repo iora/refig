@@ -32,13 +32,13 @@ refig.set('foo', 1)
 refig.set({ bar: 2 });
 ```
 
----
+===
 
 ### `.get(name)`
 Returns a option out of the configuration.
   1. `name`: (`String`) name of option to fetch
 
----
+===
 
 ### `.read(location, [callback])`
 Read files or folders for configurations asynchronously.
@@ -47,7 +47,7 @@ Read files or folders for configurations asynchronously.
 
 Returns `Promise`
 
----
+===
 
 ### `.readSync(location)`
 The synchronous version of `.read`.
@@ -55,7 +55,7 @@ The synchronous version of `.read`.
 
 Returns configuration.
 
----
+===
 
 ### Callback function
 The callback is triggered once the configurations have been fetched and resolved on a asynchronous function.
