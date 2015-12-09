@@ -15,7 +15,7 @@ Refig has a consistent and simple API.
 
 Note: Every asynchronous function also returns a `Promise`, so you don't have to use callbacks.
 
-### `refig.read(location, [callback])`
+### `.read(location, [callback])`
 Read files or folders for configurations asynchronously.
 
 Synchronous alternative: `refig.readSync(location)`.
@@ -24,7 +24,7 @@ Synchronous alternative: `refig.readSync(location)`.
   1. `location`: (`Array`/`String`) Path(s) leading to folders or files to be parsed.
   2. `callback`: (`Function`) A [Callback function](#callback-function)
 
-### `Callback function`
+### Callback function
 The callback is triggered once the configurations have been fetched and resolved on a asynchronous function.
 
 #### Arguments
