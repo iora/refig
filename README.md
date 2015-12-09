@@ -59,6 +59,31 @@ Returns configuration.
 
 ===
 
+### `.write(configs, [callback])`
+### `.write(file, config, [callback])`
+Write configurations (or multiple) asynchronously.
+  1. `file`: (`String`/`Array`) Path(s) of location(s) to write `config` to.
+  2. `config`: (`Object`) Object to write to file(s).
+  3. `callback`: (`Function`) A [Callback function](#callback-function)
+OR
+  1. `configs`: An object where the keys are filenames and the values are configs to write.
+
+Example:
+```javascript
+refig
+// One file
+.write('some-file.json', { foo: 'bar' }).then(...)
+// Multiple files of same config
+.write(['some-file.json', 'another-file.json'], { foo: 'bar' }).then(...)
+// Map of multiple configurations
+.write({
+  'some-file.json': { foo: 'bar' },
+  'another-file.json': { baz: 'qux' }
+});
+```
+
+===
+
 ### Callback function
 A callback is triggered once that function is done doing it's processes.
   1. `err`: (`Object`/`null`) The error encountered while processing, if none encountered it will be `null`.
