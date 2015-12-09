@@ -10,6 +10,8 @@ Configurations in modern applications can become wide-spread through a system, t
 ### The Solution
 Refig provides a simple interface to source configurations files from multiple locations, parse all of them, and concatenate them into one object.  This makes it more flexible for the user and easier for you to develop...  Plus the caching and async interface makes for a fast library
 
+---
+
 # API
 Refig has a consistent and simple API.
 
@@ -61,3 +63,38 @@ Returns configuration.
 A callback is triggered once that function is done doing it's processes.
   1. `err`: (`Object`/`null`) The error encountered while processing, if none encountered it will be `null`.
   2. `result`: (`Object`/`null`) The result of the function, if there was no result (i.e an error happened) it will be `null`.  
+
+---
+
+# Examples
+Here are some examples for what you can do with Refig:
+
+```javascript
+refig
+.set({name:'my-package', default:'my-package.json'})
+.read(process.cwd()) // For CLI's.
+.then(function(config){
+   // ...
+});
+```
+
+Since they return promises, you can cluster them:
+```javascript
+Promise.all([
+  refig.read('some-folder'),
+  refig.read('another-folder'),
+  refig.read('some.json')
+])
+.then(function(configs){
+  // Configs is an array of each config, in the order they were in the array.
+});
+```
+
+However, if you want to read from multiple places, then merge the results.  Refig has shorthand for this:
+```javascript
+refig
+.read([ 'some-folder', 'another-folder', 'some.json' ])
+.then(function(config){
+  // Config is the merged result of all 3 locations.
+});
+```
