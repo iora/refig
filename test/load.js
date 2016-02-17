@@ -1,7 +1,7 @@
 import test from 'ava';
 import Refig from '../out';
 
-/** Singular file loading
+/** single file load
   * Load a single file.
   */
 test('single file load', (t) => {
@@ -31,13 +31,13 @@ test('multiple file load', (t) => {
 /** default name
   * Set a default file name, and try to load a directory.
   */
-test('default name', (t) => {
-  t.plan(1);
-
-  const refig = new Refig();
-  refig.set('name', '2.json');
-
-  return refig.load(__dirname).then(r => {
-    t.same(r, { baz: 'qux' });
-  });
-});
+// test('default name', (t) => {
+//   t.plan(1);
+//
+//   const refig = new Refig();
+//   refig.set('name', '2.json');
+//
+//   return refig.load(__dirname).then(r => {
+//     t.same(r, { baz: 'qux' });
+//   });
+// });
