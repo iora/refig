@@ -1,5 +1,6 @@
 import { join } from 'path';
 import fs from 'fs';
+import assign from 'object-assign';
 import promisify from './promisify';
 
 const [ open, read, stat ] = promisify(fs.open, fs.read, fs.stat);
@@ -34,6 +35,22 @@ export default class Refig {
     .then(([ x, data ]) => this._get('parser')(data));
   }
 
+  merge(...paths) {
+    return this.load(paths).then(all => {
+      let flat = [];
+      this._treeRecursion([all], item => flat.push(item));
+      return assign({}, ...flat);
+    });
+  }
+
+  pick(files, name) {
+    return this.load(files).then(all => {
+      let picks = [];
+      this._treeRecursion([all], item => picks.push(item[name]));
+      return picks;
+    });
+  }
+
   purge(item) {
     let old;
     if (typeof item !== 'undefined') {
@@ -48,4 +65,10 @@ export default class Refig {
 
   set(...args) { return this._opts.set(...args); }
   _get(...args) { return this._opts.get(...args); }
+
+  _treeRecursion(input, operation) {
+    if (Array.isArray(input)) {
+      for (let item of input) this._treeRecursion(item, operation);
+    } else operation(input);
+  }
 }
