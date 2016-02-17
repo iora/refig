@@ -1,6 +1,6 @@
 {
   "name": "refig",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Manage configuration files with Promise objects.",
   "main": "out",
   "scripts": {
