@@ -37,7 +37,7 @@ test('default name', (t) => {
   const refig = new Refig();
   refig.set('name', '2.json');
 
-  return refig.load('.').then(r => {
+  return refig.load(__dirname).then(r => {
     t.same(r, { baz: 'qux' });
   });
 });
