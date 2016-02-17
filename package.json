@@ -4,7 +4,7 @@
   "description": "A library to manage configurations.",
   "main": "out",
   "scripts": {
-    "build": "babel src -d out --presets es2015",
+    "build": "rm -rf out; babel src -d out --presets es2015",
     "test": "npm run build; ava"
   },
   "files": [
