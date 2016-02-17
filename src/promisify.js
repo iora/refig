@@ -1,4 +1,3 @@
-
 /** Promisify a node-style asynchronous callback function.
   */
 export default function promisify(...fns) {
