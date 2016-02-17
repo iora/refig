@@ -2,33 +2,36 @@ import { join } from 'path';
 import fs from 'fs';
 import promisify from './promisify';
 
-const [ open, read, fstat ] = promisify(fs.open, fs.read, fs.fstat);
+const [ open, read, stat ] = promisify(fs.open, fs.read, fs.stat);
 
 export default class Refig {
   constructor(opts) {
     this._opts = new Map();
     this._cache = new Map();
 
-    // Defaults
-    this.set();
+    this.set('parser', JSON.parse);
+
+    for (let opt in opts) this.set(opt, opts[opt]);
   }
 
-  load(paths) {
-    if (Symbol.iterator in Object(paths) && typeof paths !== 'string') {
+  load(path) {
+    if (Symbol.iterator in Object(path) && typeof path !== 'string') {
       let master = [];
-      for (const path of paths) master.push(this.load(path));
+      for (const path of path) master.push(this.load(path));
       return Promise.all(master);
     }
 
-    const file = join(paths, this._get('name') || '');
-    if (this._cache.has(file)) resolve(this._cache.get(file));
+    if (this._cache.has(path)) resolve(this._cache.get(path));
 
-    return open(file, 'r')
-    .then(([fd]) => Promise.all([fstat(fd), fd]))
-    .then(([[stats], fd]) => {
+    return stat(path)
+    .then(([ stats ]) => {
+      const file = stats.isFile() ? path : join(path, this._get('file') || '');
+      return Promise.all([open(file, 'r'), stats]);
+    })
+    .then(([ [fd], stats ]) => {
       return read(fd, new Buffer(stats.size), 0, stats.size, 0);
     })
-    .then(([x, data]) => JSON.parse(data));
+    .then(([ x, data ]) => this._get('parser')(data));
   }
 
   purge(item) {
