@@ -1,7 +1,7 @@
 {
   "name": "refig",
   "version": "3.0.0",
-  "description": "A library to manage configurations.",
+  "description": "Manage configuration files with Promise objects.",
   "main": "out",
   "scripts": {
     "build": "rm -rf out; babel src -d out --presets es2015",

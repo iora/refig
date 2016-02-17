@@ -1,8 +1,8 @@
-refig
+Refig
 =====
-> Manager configuration files, while using Promise objects.
+> Manage configuration files with Promise objects.
 
-Refig is a library for reading configuration files.  It handles directories, uses a parser of your choice, caches configurations, and is based on top of Promises (for a nice asynchronous flow).
+Refig is a library for reading and parsing configuration files.  It handles directories, uses a parser of your choice, caches configurations, and is based on top of `Promise` objects (for a nice asynchronous flow).
 
 ## Installation
 ```shell
