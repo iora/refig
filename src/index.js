@@ -19,7 +19,7 @@ export default class Refig {
   }
 
   /** Read and parse a configuration file.
-    * @method Refig#load
+    * @member Refig#load
     * @param {Array|String} path - A string (or array of strings) of a path.
     */
   load(path) {
@@ -45,7 +45,7 @@ export default class Refig {
   }
 
   /** Fetch multiple configurations and merge them.
-    * @method Refig#merge
+    * @member Refig#merge
     * @param {Array|String} path - A string (or array of strings) of a path.
     */
   merge(path) {
@@ -57,7 +57,7 @@ export default class Refig {
   }
 
   /** Pick a single attribute out of a file.
-    * @method Refig#pick
+    * @member Refig#pick
     * @param {Array|String} path - A string (or array of strings) of a path.
     * @param {String} name - Name of the attribute to pick.
     */
@@ -70,7 +70,7 @@ export default class Refig {
   }
 
   /** Purge a file from the cache.
-    * @method Refig#purge
+    * @member Refig#purge
     * @param {Array|String} path - A string (or array of strings) of a path.
     */
   purge(path) {
@@ -86,7 +86,7 @@ export default class Refig {
   }
 
   /** Set an option
-    * @method Refig#set
+    * @member Refig#set
     * @alias Refig._opts.set
     */
   set(...args) { return this._opts.set(...args); }

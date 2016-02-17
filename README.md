@@ -1,6 +1,6 @@
 Refig
 =====
-> Manage configuration files with Promise objects.
+> Manage configuration files with `Promise` objects.
 
 Refig is a library for reading and parsing configuration files.  It handles directories, uses a parser of your choice, caches configurations, and is based on top of `Promise` objects (for a nice asynchronous flow).
 
@@ -23,11 +23,11 @@ const refig = new Refig();
 
 * [Refig](#Refig)
     * [new Refig(opts)](#new_Refig_new)
-    * [.load(path)](#Refig.load)
-    * [.merge(path)](#Refig.merge)
-    * [.pick(path, name)](#Refig.pick)
-    * [.purge(path)](#Refig.purge)
-    * [.set()](#Refig.set)
+    * [.load](#Refig+load)
+    * [.merge](#Refig+merge)
+    * [.pick](#Refig+pick)
+    * [.purge](#Refig+purge)
+    * [.set](#Refig+set)
 
 <a name="new_Refig_new"></a>
 #### new Refig(opts)
@@ -36,52 +36,52 @@ const refig = new Refig();
 | --- | --- | --- |
 | opts | <code>Object</code> | Options |
 
-<a name="Refig.load"></a>
-#### Refig.load(path)
+<a name="Refig+load"></a>
+#### refig.load
 Read and parse a configuration file.
 
-**Kind**: static method of <code>[Refig](#Refig)</code>  
+**Kind**: instance property of <code>[Refig](#Refig)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | path | <code>Array</code> &#124; <code>String</code> | A string (or array of strings) of a path. |
 
-<a name="Refig.merge"></a>
-#### Refig.merge(path)
+<a name="Refig+merge"></a>
+#### refig.merge
 Fetch multiple configurations and merge them.
 
-**Kind**: static method of <code>[Refig](#Refig)</code>  
+**Kind**: instance property of <code>[Refig](#Refig)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | path | <code>Array</code> &#124; <code>String</code> | A string (or array of strings) of a path. |
 
-<a name="Refig.pick"></a>
-#### Refig.pick(path, name)
+<a name="Refig+pick"></a>
+#### refig.pick
 Pick a single attribute out of a file.
 
-**Kind**: static method of <code>[Refig](#Refig)</code>  
+**Kind**: instance property of <code>[Refig](#Refig)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | path | <code>Array</code> &#124; <code>String</code> | A string (or array of strings) of a path. |
 | name | <code>String</code> | Name of the attribute to pick. |
 
-<a name="Refig.purge"></a>
-#### Refig.purge(path)
+<a name="Refig+purge"></a>
+#### refig.purge
 Purge a file from the cache.
 
-**Kind**: static method of <code>[Refig](#Refig)</code>  
+**Kind**: instance property of <code>[Refig](#Refig)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | path | <code>Array</code> &#124; <code>String</code> | A string (or array of strings) of a path. |
 
-<a name="Refig.set"></a>
-#### Refig.set()
+<a name="Refig+set"></a>
+#### refig.set
 Set an option
 
-**Kind**: static method of <code>[Refig](#Refig)</code>  
+**Kind**: instance property of <code>[Refig](#Refig)</code>  
 
 ## Examples
 Since Refig is designed around `Promise` objects, you can do some pretty interesting things.
